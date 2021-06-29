@@ -1,0 +1,15 @@
+<p>login works!</p>
+<h1>{{ title }}</h1>                      <!--Textinterpolation-->
+<div>
+  <div class="login">
+    <label for="username">Username: </label>
+    <input type="text" name="username" [(ngModel)]="username" appLowerCase>
+  </div>
+  <div class="login">
+    <label for="password">Password: </label>
+    <input type="password" name="password" [(ngModel)]="password">
+  </div>
+  <div class=loginbutton>
+    <button (click)= "login()" type="button">Login</button>
+  </div>
+</div>
