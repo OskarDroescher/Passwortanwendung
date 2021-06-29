@@ -1,1 +1,22 @@
-<p>to-do-list works!</p>
+<br>
+<div class="Task">
+    <label for="task">Task:</label>
+    <input type="text" name="task" [(ngModel)]="task.content" placeholder="What has to be done">
+</div>
+<br>
+<div class=taskbutton>
+    <button (click)="addTask()" type="button">Add Task</button>
+</div>
+
+
+<div *ngFor="let task of tasks; let index = index">
+    <div>{{ index + 1 }}</div>
+    <div>{{ task.content }}</div>
+    <input type="checkbox" [checked]="task.completed">
+    <div class=removebutton>
+        <button (click)="removeTask(index)" type="button">Remove Task</button>
+    </div>
+    <div class=completebutton>
+        <button (click)="completeTask(index)" type="button">Task Status</button>
+    </div>
+</div>
