@@ -12,9 +12,9 @@ export class ToDoListComponent implements OnInit {
   task: Task = { content: "", completed: false }
 
   tasks: Task[] = [
-    {content: "Aufgabe1", completed: false},
-    {content: "Aufgabe2", completed: true},
-    {content: "Aufgabe3", completed: false}
+    {content: "Einkaufen", completed: false},
+    {content: "Putzen", completed: false},
+    {content: "Pflanzen gießen", completed: false}
   ]
 
   constructor() { }
@@ -33,9 +33,12 @@ export class ToDoListComponent implements OnInit {
   }
 
   completeTask(id: number){
-    console.log(id)
-    const task = (task: any, index: any) => index !== id
-    this.tasks.map((task, index) => task.completed = !task.completed)
+    this.tasks.map((task, index) => {
+      if ( index == id ){
+        task.completed = !task.completed
+        console.log(task.completed)
+      }
+    })
   }
 
 
